@@ -1,6 +1,6 @@
 import React from 'react'
 import {Navbar,Nav,} from 'react-bootstrap'
-import NavbarIcon from './componenteimagen/NavbarIcon'
+import CartWidget from './componenteimagen/CartWidget'
 import './styles/Nav.css'
 function AppNavbar() {
 return (
@@ -16,7 +16,7 @@ return (
         <Nav.Link href="#link">Contactos</Nav.Link>
     </Nav>
     </Navbar.Collapse>
-    <NavbarIcon/>
+    <CartWidget/>
 </Navbar>
     </div>
 )
