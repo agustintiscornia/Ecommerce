@@ -9,7 +9,13 @@
 }
 
 .icono {
-    color:cornflowerblue;
+    color:black;
     margin-right: 55px;
     font-size: 30px
 }
+
+.navegador {
+
+    background-color:lightskyblue;
+}
+

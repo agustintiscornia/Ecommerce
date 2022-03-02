@@ -5,7 +5,7 @@ import './styles/Nav.css'
 function AppNavbar() {
 return (
     <div>
-        <Navbar bg="dark" variant='blue' expand="lg">
+        <Navbar className='navegador' expand="lg">
     <Navbar.Brand className='logo' href="#home">Vixis</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
