@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 
-/*
+
 const ItemListContainer = ({titulo}) => {
   return (
     <div className='titulo'>
@@ -10,9 +10,9 @@ const ItemListContainer = ({titulo}) => {
   )
 }
 
-export default ItemListContainer */
+export default ItemListContainer 
 
-
+/*
 export default function ItemListContainer() {
   const array = [
     { id: '1', productos: 'remera', talle: 'm', stock: '3' },
@@ -56,4 +56,5 @@ console.log(productos)
     
     )}
   </div>;
-}
+} 
+*/
