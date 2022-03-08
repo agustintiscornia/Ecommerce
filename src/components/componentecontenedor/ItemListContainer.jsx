@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
+import { Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import ItemList from '../itemList/ItemList';
 
 
+/*
 const ItemListContainer = ({titulo}) => {
   return (
     <div className='titulo'>
@@ -11,19 +15,22 @@ const ItemListContainer = ({titulo}) => {
 }
 
 export default ItemListContainer 
+*/
 
-/*
+
 export default function ItemListContainer() {
   const array = [
-    { id: '1', productos: 'remera', talle: 'm', stock: '3' },
-    { id: '2', productos: 'pantalon', talle: 'l', stock: '4' },
-    { id: '3', productos: 'campera', talle: 'l', stock: '6' },
+    { id: '1', productos: 'remera',imagen:"http://www.rhysto.com.ar/productos/remeras1.jpg", talle: ' talle:M' },
+    { id: '2', productos: 'pantalon',imagen:"http://yale.devandtest.net/image/cache/catalog/collection/jeans/01-0853-0692-14-200x200.jpg", talle: 'talle:L'},
+    { id: '3', productos: 'campera', imagen:"https://www.nakaoutdoors.com.ar/img/articulos/marmot_venus_jacket_thumb1.jpg",talle: 'talle:L' },
   ];
 
   const getFetch = new Promise((resolve, reject) => {
     let url = array;
     if (url === array) {
-      resolve(array);
+      setTimeout(()=>{
+        resolve(array);
+      },2000)
     } else {
       reject('404 error');
     }
@@ -42,19 +49,10 @@ export default function ItemListContainer() {
   
 console.log(productos)
 
-  return <div>
-    {array.map((prod)=><div
-    key={prod.id}
-    <div className="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-    
-    )}
-  </div>;
+  return(
+  <>
+    <ItemList array={productos}/>
+  </>
+  ) 
 } 
-*/
+

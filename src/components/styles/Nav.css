@@ -1,21 +1,18 @@
 .logo {
-    font-size: 50px;
     margin: 10px;
 }
 
 .menu {
     font-size: 20px;
     margin-left: 400px;
+    background-color: black;
 }
 
 .icono {
-    color:black;
+    color:white;
     margin-right: 55px;
     font-size: 30px
 }
 
-.navegador {
 
-    background-color:lightskyblue;
-}
 
