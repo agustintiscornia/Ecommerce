@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 import ItemList from '../itemList/ItemList';
 
 
@@ -18,16 +16,16 @@ export default ItemListContainer
 */
 
 
-export default function ItemListContainer() {
+function ItemListContainer() {
   const array = [
-    { id: '1', productos: 'remera',imagen:"http://www.rhysto.com.ar/productos/remeras1.jpg", talle: ' talle:M' },
-    { id: '2', productos: 'pantalon',imagen:"http://yale.devandtest.net/image/cache/catalog/collection/jeans/01-0853-0692-14-200x200.jpg", talle: 'talle:L'},
-    { id: '3', productos: 'campera', imagen:"https://www.nakaoutdoors.com.ar/img/articulos/marmot_venus_jacket_thumb1.jpg",talle: 'talle:L' },
+    { id: '1',title:"Vixis", producto: 'remera',imagen:"http://www.rhysto.com.ar/productos/remeras1.jpg", talle: ' talle:M' },
+    { id: '2',title:"Vixis", producto: 'pantalon',imagen:"http://yale.devandtest.net/image/cache/catalog/collection/jeans/01-0853-0692-14-200x200.jpg", talle: 'talle:L'},
+    { id: '3',title:"Vixis", producto: 'campera', imagen:"https://www.nakaoutdoors.com.ar/img/articulos/marmot_venus_jacket_thumb1.jpg",talle: 'talle:L' },
   ];
 
   const getFetch = new Promise((resolve, reject) => {
-    let url = array;
-    if (url === array) {
+    let url = 'Vixis.com'
+    if (url === 'Vixis.com') {
       setTimeout(()=>{
         resolve(array);
       },2000)
@@ -40,10 +38,10 @@ export default function ItemListContainer() {
 
 
   useEffect(() => {
-    getFetch.then(
-      (response) => setProductos(response),
-      (error) => console.log(error)
-    );
+    getFetch
+    .then((response) => setProductos(response))
+    .catch(err => console.log (err))
+    .finally(()=> console.log('cargando'))
 }, [])
   
   
@@ -51,8 +49,9 @@ console.log(productos)
 
   return(
   <>
-    <ItemList array={productos}/>
+    <ItemList productos={productos}/>
   </>
   ) 
 } 
 
+export default ItemListContainer
