@@ -1,8 +1,10 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import AppNavbar from './components/AppNavbar';
 import ItemListContainer from './components/componentecontenedor/ItemListContainer';
 import ItemCount from './components/ComponenteItemCount/ItemCount';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemDetailContainer from './components/componentecontenedor/ItemDetailContainer/ItemDetailContainer';
+
 
 
 function App() {
@@ -15,6 +17,9 @@ function App() {
       <ItemCount/>
 
       <ItemListContainer titulo={titulo}/>
+      
+      <ItemDetailContainer/>
+
     </div>
   );
 }
