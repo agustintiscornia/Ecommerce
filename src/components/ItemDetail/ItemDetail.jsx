@@ -3,7 +3,9 @@ import React from 'react'
 function ItemDetail({productos}) {
   return (
     <div>
-        {productos.talle}, {productos.title},{productos.producto} 
+      <div className='titulosItem'>{productos.title}</div>,
+        {productos.talle},
+        {productos.producto} 
     </div>
   )
 }

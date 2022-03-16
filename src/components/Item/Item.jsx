@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Item(prod) {
 return (
-    <div className='container'> 
+    <div className='containerItem'> 
     <Card style={{ width: '12rem'}}>
 <Card.Img variant="top" src={prod.imagen} />
 <Card.Body>

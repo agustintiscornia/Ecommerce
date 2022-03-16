@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-const ItemCount=({init,stock})=> {
+const ItemCount=({init, stock, onAdd})=> {
 
-    const [count, setCount,] = useState(init=1, stock=8) ;
+
+    const [count, setCount] = useState(init) ;
 
 
     const increase = () => {
@@ -17,17 +18,20 @@ const ItemCount=({init,stock})=> {
 }
 
 const addCarrito=()=>{
-    setCount(init)
     console.log(`Agrego al carrito ${count} unidades`)
+    onAdd(count)
 }
+
+
+
     return (
     <div className='botones'>
-        <label>{count}</label>
-        <p>Pantalones</p>
-        <img src="https://static1.shopoon.fr/catalog/products/6/70/28/67/6/@/7028676-pantalon-timberland-homme-bleu-petrole-32w-32l-180x180-1.jpg" alt="" />
-        <button onClick={increase}>+</button>
+        
         <button onClick={decrease}>-</button>
-        <button onClick={addCarrito}> Agregue su pantalon</button>
+        <div>{count}</div>
+        <button onClick={increase}>+</button>
+        <br /><br />
+        <button onClick={addCarrito}> Agregar al carrito</button>
     </div>
     );
 }

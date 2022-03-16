@@ -11,14 +11,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
-  
+  const onAdd=(cantidad)=>{
+    console.log(cantidad)
+  }
   return (
     <BrowserRouter>
       <div>
         <AppNavbar/>
+        <ItemCount  init={1} stock={10} onAdd={onAdd}/> 
         <Routes>
-            <Route path='/contador'element={<ItemCount/>} />
-
+            
             <Route path='/'element={<ItemListContainer/>}/>
 
             <Route path='/categoria/:categoriaId'element={<ItemListContainer/>}/>
