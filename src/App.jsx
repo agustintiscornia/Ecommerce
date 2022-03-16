@@ -1,26 +1,38 @@
-import './App.css';
+import './components/styles/Nav.css'
+import { BrowserRouter,Routes,Route, Navigate} from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
 import ItemListContainer from './components/componentecontenedor/ItemListContainer';
 import ItemCount from './components/ComponenteItemCount/ItemCount';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/componentecontenedor/ItemDetailContainer/ItemDetailContainer';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
 function App() {
 
-  const titulo = 'Productos'
+  
   return (
-    <div>
-      <AppNavbar/>
+    <BrowserRouter>
+      <div>
+        <AppNavbar/>
+        <Routes>
+            <Route path='/contador'element={<ItemCount/>} />
 
-      <ItemCount/>
+            <Route path='/'element={<ItemListContainer/>}/>
 
-      <ItemListContainer titulo={titulo}/>
-      
-      <ItemDetailContainer/>
+            <Route path='/categoria/:categoriaId'element={<ItemListContainer/>}/>
 
-    </div>
+            <Route path='cart' element={<Cart/>}/>
+
+
+            <Route path='/detalle/:detalleId' element= {<ItemDetailContainer/>}/>
+
+            <Route path='/*' element={<Navigate to ='/' replace/> } />
+        </Routes>
+      </div>
+    </BrowserRouter>
+
   );
 }
 

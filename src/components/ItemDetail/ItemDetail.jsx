@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ItemDetail(productos) {
+function ItemDetail({productos}) {
   return (
     <div>
-        {productos.title}
+        {productos.talle}, {productos.title},{productos.producto} 
     </div>
   )
 }

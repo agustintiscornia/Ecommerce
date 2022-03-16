@@ -5,8 +5,8 @@
     ];
 
     export const getFetch = new Promise((resolve, reject) => {
-    let url = 'Vixis.com'
-    if (url === 'Vixis.com') {
+    
+    if (array!==[]) {
         setTimeout(()=>{
         resolve(array);
         },2000)
@@ -15,3 +15,5 @@
     }
     })
 
+
+    
