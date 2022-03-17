@@ -27,10 +27,9 @@ const addCarrito=()=>{
     return (
     <div className='botones'>
         
-        <button onClick={decrease}>-</button>
+        <button onClick={decrease}>-</button><button onClick={increase}>+</button>
         <div>{count}</div>
-        <button onClick={increase}>+</button>
-        <br /><br />
+        <br />
         <button onClick={addCarrito}> Agregar al carrito</button>
     </div>
     );

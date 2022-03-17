@@ -27,3 +27,12 @@
     display: flex;
     flex-direction: row;
 }
+
+.imagendetail {
+    height: 200px;
+}
+
+.containerItemm {
+    display: flex;
+    flex-direction: row;
+}
