@@ -12,7 +12,7 @@ const CartContext= createContext([])
 
         const agregarCart=(prod)=>{
 
-        setCartList([...cartList,prod])
+        setCartList([... cartList,prod])
 
     }
 

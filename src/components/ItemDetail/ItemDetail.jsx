@@ -11,14 +11,14 @@ function ItemDetail({productos}) {
   const[count,setCount]=useState(null)
 
 
-  const{agregarCart}=useCartContext()
+  const{agregarCart,cartList}=useCartContext()
 
   const onAdd=(cantidad)=>{
     console.log(cantidad)
     setCount(cantidad)
-    agregarCart({... productos, cant:cantidad})
+    agregarCart({...productos, cant:cantidad})
   }
-
+  console.log(cartList)
   return (
 
     

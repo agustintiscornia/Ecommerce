@@ -4,7 +4,7 @@ import AppNavbar from './components/AppNavbar';
 import ItemListContainer from './components/componentecontenedor/ItemListContainer';
 import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/componentecontenedor/ItemDetailContainer/ItemDetailContainer';
-import CartContextProvider, { CartContext } from '../src/context/cartContext';
+import CartContextProvider from '../src/context/cartContext';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 

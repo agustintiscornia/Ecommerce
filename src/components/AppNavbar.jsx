@@ -15,8 +15,8 @@ return (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <NavLink  className='menu' to="/">Home</NavLink>
-        <NavLink  className='menu' to="categoria/remera">remera</NavLink>
-        <NavLink  className='menu' to="categoria/pantalon">pantalon</NavLink>
+        <NavLink  className='menu' to="/categoria/remera">remera</NavLink>
+        <NavLink  className='menu' to="/categoria/pantalon">pantalon</NavLink>
         <NavLink className='menu' to='/'>Contactos</NavLink>
       </Nav>
     </Navbar.Collapse>

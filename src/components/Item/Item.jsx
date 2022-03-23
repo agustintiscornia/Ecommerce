@@ -7,7 +7,7 @@ import '../styles/Nav.css'
 
 function Item(prod) {
 return (
-    <div className='containerItemm'> 
+    <div className='card'> 
     <Card style={{ width: '12rem'}}>
 <Card.Img variant="top" src={prod.imagen} />
 <Card.Body>
@@ -15,7 +15,7 @@ return (
     <Card.Text>
     {prod.producto}-{prod.talle}
     </Card.Text>
-    <Link to={`detalle/${prod.id}`}>
+    <Link to={`/detalle/${prod.id}`}>
     <Button variant="secondary">detalle del producto</Button>
     </Link>
 </Card.Body>
