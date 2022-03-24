@@ -6,7 +6,15 @@ function Cart() {
 console.log(cartList)
   return (
     <div>
-      {cartList.map(prod=><li>{prod.producto}{prod.imagen}</li>)}
+      <h1>Carrito</h1>
+      <p>Revise su compra por favor!</p>
+      
+      {cartList.map(prod=><div className='containerCart'>
+
+        <li>{prod.producto}</li>
+        <li>{prod.talle}</li>
+        <li>{prod.precio}$</li>
+      </div>)}
 
       <button onClick={VaciarCart}>Vaciar carrito</button>
     </div>
