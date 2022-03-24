@@ -9,11 +9,11 @@ console.log(cartList)
       <h1>Carrito</h1>
       <p>Revise su compra por favor!</p>
       
-      {cartList.map(prod=><div className='containerCart'>
+      {cartList.map(prod=><div className='containerCart-row'>
 
-        <li>{prod.producto}</li>
-        <li>{prod.talle}</li>
-        <li>{prod.precio}$</li>
+        <ul>{prod.producto}</ul>
+        <ul>{prod.talle}</ul>
+        <ul>{prod.precio}$</ul>
       </div>)}
 
       <button onClick={VaciarCart}>Vaciar carrito</button>

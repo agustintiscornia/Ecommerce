@@ -37,6 +37,8 @@
     flex-direction: row;
 }
 
-.containerCart{
-margin-left: 10px;
+.containerCart-row{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
 }
