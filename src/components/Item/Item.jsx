@@ -7,7 +7,7 @@ import '../styles/Nav.css'
 
 function Item(prod) {
 return (
-    <div className='card'> 
+    <div className='card-row'> 
     <Card style={{ width: '12rem'}}>
 <Card.Img variant="top" src={prod.imagen} />
 <Card.Body>

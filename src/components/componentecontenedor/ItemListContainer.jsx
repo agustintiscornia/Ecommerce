@@ -1,21 +1,10 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getFetch } from '../helpers/getFech';
 import ItemList from '../itemList/ItemList';
 
 
-/*
-const ItemListContainer = ({titulo}) => {
-  return (
-    <div className='titulo'>
-        <h1>{titulo}</h1>
-    </div>
-  )
-}
-
-export default ItemListContainer 
-*/
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 export function ItemListContainer() {
   const [productos, setProductos] = useState([])
@@ -24,23 +13,19 @@ export function ItemListContainer() {
 
   
   useEffect(() => {
-    if (categoriaId){
-    getFetch
-    .then((respuesta)=>{
-
-      return respuesta
-    })
-      .then((resp) => setProductos(resp.filter(pro=>pro.producto===categoriaId)))
-      .catch(err => console.log (err))
-      .finally(()=> setLoading(false))
+    const db = getFirestore()
+    if (categoriaId) {
+        const queryColection = collection(db, 'items')
+        const queryFilter = query(queryColection, where('productos', '==', categoriaId))
+        getDocs(queryFilter)
+            .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
     
     }else{
-      getFetch
-      .then((respuesta)=>{
-
-        return respuesta
-      })
-      .then((resp) => setProductos(resp))
+      const queryColection = collection(db, 'items')
+      getDocs(queryColection)
+      .then(resp => setProductos(resp.docs.map(item=>({ id:item.id, ...item.data()}))))
       .catch(err => console.log (err))
       .finally(()=> setLoading(false))
     }

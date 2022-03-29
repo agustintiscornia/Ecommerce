@@ -1,9 +1,12 @@
-import { useCartContext } from '../../context/cartContext'
+import { useCartContext} from '../../context/cartContext'
 
 function Cart() {
 
-    const{cartList,VaciarCart}= useCartContext()
+    const{cartList,VaciarCart,removeItem,precioTotal}= useCartContext()
 console.log(cartList)
+
+
+
   return (
     <div>
       <h1>Carrito</h1>
@@ -14,9 +17,13 @@ console.log(cartList)
         <ul>{prod.producto}</ul>
         <ul>{prod.talle}</ul>
         <ul>{prod.precio}$</ul>
+        <ul>{prod.cant}cantidad</ul>
+
+        <button onClick={()=> removeItem(prod.id)}> X </button>
       </div>)}
 
-      <button onClick={VaciarCart}>Vaciar carrito</button>
+      <button onClick={VaciarCart}>vaciar carrito</button>
+      <div>{precioTotal()} precio</div>
     </div>
   )
 }

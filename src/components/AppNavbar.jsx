@@ -4,8 +4,12 @@ import { Container } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CartWidget from './componenteimagen/CartWidget'
+import { useCartContext } from '../context/cartContext'
 import './styles/Nav.css'
 function AppNavbar() {
+
+const {cantidadTotalItem}=useCartContext()
+
 return (
     <div>
   <Navbar bg="dark" variant='dark'>
@@ -22,6 +26,7 @@ return (
     </Navbar.Collapse>
   </Container>
   <NavLink to="cart">
+    {cantidadTotalItem()}
   <CartWidget/>
   </NavLink>
 </Navbar>
