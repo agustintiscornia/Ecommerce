@@ -6,7 +6,7 @@ function Cart() {
     const{cartList,VaciarCart,removeItem,precioTotal}= useCartContext()
 console.log(cartList)
 
-const generarOrden=()=>{
+const generarOrden=async()=>{
 
   let orden = {}
 
@@ -25,11 +25,12 @@ const generarOrden=()=>{
   
   console.log(orden)
 
-  /* const db = getFirestore()
-  const queryCollection = collection(db, 'orders')
-  addDoc(queryCollection, orden)
-  .catch(err => console.log (err))
-  .finally(()=> console.log('termino')) */
+  const db = getFirestore()
+      const queryCollectionSet = collection(db, 'orders')
+      addDoc(queryCollectionSet, orden)
+      .catch(err => console.error(err))
+      .finally(() => console.log('termino '))
+
 }
 
   return (
