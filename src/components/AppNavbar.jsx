@@ -21,7 +21,7 @@ return (
         <NavLink  className='menu' to="/">Home</NavLink>
         <NavLink  className='menu' to="/categoria/remera">remera</NavLink>
         <NavLink  className='menu' to="/categoria/pantalon">pantalon</NavLink>
-        <NavLink className='menu' to='/'>Contactos</NavLink>
+        <NavLink className='menu' to='/categoria/campera'>campera</NavLink>
       </Nav>
     </Navbar.Collapse>
   </Container>

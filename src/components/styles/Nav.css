@@ -1,3 +1,5 @@
+
+/* navbar */
 .logo {
     margin: 10px;
     text-decoration: none;
@@ -16,13 +18,20 @@
 .menu:hover{
     color:gray;
 }
-
+/* item (card) */
+.card{
+    width: 12rem;
+    height: 30px;
+    margin-left: 35px;
+}
+/* CartWidget */
 .icono {
     color:white;
     margin-right: 55px;
     font-size: 30px
 }
 
+/* ItemDetail */
 .containerItem{
     display: flex;
     flex-direction: row;
@@ -32,14 +41,21 @@
     height: 200px;
 }
 
-.card-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
+/* Cart */
 .containerCart-row{
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
+}
+
+/* App */
+.index{
+    background-color:cornsilk
+}
+/* ItemList */
+.containerItemList{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 40px;
 }

@@ -16,7 +16,7 @@ export function ItemListContainer() {
     const db = getFirestore()
     if (categoriaId) {
         const queryColection = collection(db, 'items')
-        const queryFilter = query(queryColection, where('productos', '==', categoriaId))
+        const queryFilter = query(queryColection, where('producto', '==', categoriaId))
         getDocs(queryFilter)
             .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
             .catch(err => console.log(err))

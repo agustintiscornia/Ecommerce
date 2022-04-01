@@ -4,7 +4,7 @@
     { id: '3',title:"Vixis", producto: 'campera', descripcion: "campera de cuero, con polar en su interior", imagen:"https://www.nakaoutdoors.com.ar/img/articulos/marmot_venus_jacket_thumb1.jpg",talle: 'talle:L', precio: 4000 },
     ];
 
-    export const getFetch = new Promise((resolve, reject) => {
+    const getData = new Promise((resolve, reject) => {
     
     if (array!==[]) {
         setTimeout(()=>{
@@ -16,4 +16,4 @@
     })
 
 
-    
+    export default getData

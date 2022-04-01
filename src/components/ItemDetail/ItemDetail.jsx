@@ -31,9 +31,8 @@ function ItemDetail({productos}) {
         <div className='containerItemhijo2'>
           <p>{productos.descripcion}</p>
           
-          {productos.talle}
-          <br />
-          <span>{productos.precio} </span>
+          <p>talle: {productos.talle}</p>
+          <span>precio: {productos.precio} </span>
 
         {count ?
           <Link to='/cart'>
