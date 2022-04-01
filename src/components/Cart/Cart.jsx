@@ -10,16 +10,16 @@ const generarOrden=async()=>{
 
   let orden = {}
 
-  orden.bayer = {name:"agustin" , phone:"1139199467" , email:"agustin@gmail.com" }
+  orden.buyer = {name:"agustin" , phone:"1139199467" , email:"agustin@gmail.com" }
   orden.total= precioTotal();
 
   orden.items = cartList.map(cartItem =>{
 
     const id = cartItem.id;
-    const nombre  = cartItem.nombre ;
+    const producto  = cartItem.producto ;
     const precio  = cartItem.precio * cartItem.cantidad ;
 
-    return {id,nombre,precio}
+    return {id,producto,precio}
 
   })
   
