@@ -8,7 +8,7 @@
 }
 
 .logo:hover{
-    color: white;
+    color:gold;
 }
 .menu {
     text-decoration: none;
@@ -16,14 +16,29 @@
     color: white;
 }
 .menu:hover{
-    color:gray;
+    color:gold;
+}
+
+.numero{
+    text-decoration:none;
+    color:white;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.numero2 {
+    text-decoration: none;
 }
 /* item (card) */
 .card{
-    width: 12rem;
-    height: 30px;
-    margin-left: 35px;
+margin: 40px;
 }
+.imagenItem{
+    height: 300px;
+    width: 300px !important;
+}
+
 /* CartWidget */
 .icono {
     color:white;
@@ -38,24 +53,73 @@
 }
 
 .imagendetail {
-    height: 200px;
+    height: 550px;
+    width: 700px;
 }
+
 
 /* Cart */
-.containerCart-row{
+
+h1{
 display: flex;
-flex-direction: row;
-justify-content: flex-start;
+justify-content: space-around;
+align-items: center;
+padding: 20px;
+}
+.containerCart{
+    display: flex;
+    justify-content: space-around;
+align-items: center;
 }
 
+.cartImagen{
+    width: 120px ;
+}
+.inputCart{
+    width: 300px;
+    height: 40px;
+}
+.botonCart{
+    background-color:gold;
+    color:black;
+    border-radius: 5px;
+    height: 35px;
+    border-style: none;
+}
+
+.FormContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.formCart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.preciototal{
+    margin-left: 20px;
+    font-weight: bold;
+}
+.vaciarcarrito{
+margin-top: 10px;
+margin-left: 10px;
+}
+.idcompra {
+    font-weight:bold;
+    margin-left: 20px;
+}
 /* App */
 .index{
-    background-color:cornsilk
+    background-color:white;
+    height: 625px;
 }
 /* ItemList */
 .containerItemList{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 40px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
+

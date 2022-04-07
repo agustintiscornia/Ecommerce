@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ItemCount from '../ComponenteItemCount/ItemCount'
+import { Button } from 'react-bootstrap'
 import { useState } from 'react'
 import '../styles/Nav.css'
 import { useCartContext } from '../../context/cartContext'
@@ -29,14 +30,13 @@ function ItemDetail({productos}) {
         <img className='imagendetail' src={productos.imagen} alt="" />
       </div>
         <div className='containerItemhijo2'>
-          <p>{productos.descripcion}</p>
+          <h3>{productos.descripcion}</h3>
           
-          <p>talle: {productos.talle}</p>
-          <span>precio: {productos.precio} </span>
-
+          <p>Precio: {productos.precio} </p>
+          <br />
         {count ?
           <Link to='/cart'>
-          <button variant='secondary'>terminar compra</button>
+          <Button variant="warning">terminar compra</Button>
           </Link>
           :
           <ItemCount  init={1} stock={10} onAdd={onAdd}/> 

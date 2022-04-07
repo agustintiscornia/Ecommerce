@@ -17,16 +17,16 @@ return (
     <NavLink className='logo' to="/">Vixis</NavLink>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
+      <Nav className="me-auto" >
         <NavLink  className='menu' to="/">Home</NavLink>
-        <NavLink  className='menu' to="/categoria/remera">remera</NavLink>
-        <NavLink  className='menu' to="/categoria/pantalon">pantalon</NavLink>
-        <NavLink className='menu' to='/categoria/campera'>campera</NavLink>
+        <NavLink  className='menu' to="/categoria/Macbook pro">Computadoras</NavLink>
+        <NavLink  className='menu' to="/categoria/Huawei P30">Celulares</NavLink>
+        <NavLink className='menu' to='/categoria/Samsung Tablet'>Tablet</NavLink>
       </Nav>
     </Navbar.Collapse>
   </Container>
-  <NavLink to="cart">
-    {cantidadTotalItem()}
+  <NavLink className='numero2' to="cart">
+    <div className='numero'>{cantidadTotalItem()}</div>
   <CartWidget/>
   </NavLink>
 </Navbar>

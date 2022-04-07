@@ -1,5 +1,8 @@
 import { addDoc,collection, getFirestore} from 'firebase/firestore'
 import { useState } from 'react'
+import { Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
 import { useCartContext} from '../../context/cartContext'
 
 function Cart() {
@@ -19,7 +22,7 @@ const generarOrden=async(e)=>{
   e.preventDefault();
   let orden = {}
 
-  orden.buyer = {name:"agustin" , phone:"1139199467" , email:"agustin@gmail.com" }
+  orden.buyer = dataForm
   orden.total= precioTotal();
 
   orden.items = cartList.map(cartItem =>{
@@ -55,54 +58,56 @@ console.log(dataForm)
 
   return (
     <div>
-      <h1>Carrito</h1>
-      <p>Revise su compra por favor!</p>
-      {cartList.map(prod=><div className='containerCart-row'>
+      <Button onClick={VaciarCart} variant='warning' className='vaciarcarrito'>vaciar carrito</Button>
+      <h1 className='carritotitulo'>Carrito</h1>
 
-          <ul>producto: {prod.producto}</ul>
-          <ul>talle:{prod.talle}</ul>
-          <ul>precio:{prod.precio}$</ul>
-          <ul>cantidad :{prod.cant}</ul>
-
-        <button onClick={()=> removeItem(prod.id)}> X </button>
-      </div>)}
-
-      <div> preciototal: {precioTotal()}</div>
-
-
-      <button onClick={VaciarCart}>vaciar carrito</button>
+      {cartList.map(prod=> 
+      <div className='containerCart'> 
+      <div><img className='cartImagen' src={prod.imagen} alt="" /></div>
+      <div> {prod.producto}</div>
+      <div>{prod.cant}</div>
+      <div>{prod.precio}$</div> 
+    <Button onClick={()=> removeItem(prod.id)} variant='warning'> X </Button>
+    
+</div>)}
+<br /><br />
+    <div className='preciototal'> Precio Total: {precioTotal()}$</div> 
+<br />
       {/* form */}
-      <form 
+      
+      <form className='formCart'
                 onSubmit={generarOrden}                 
             >
-                <input 
+                <input className='inputCart'
                     type='text' 
                     name='name' 
                     placeholder='name' 
                     value={dataForm.name}
                     onChange={handleChange}
                 /><br />
-                <input 
+                <input className='inputCart'
                     type='text' 
                     name='phone'
                     placeholder='tel' 
                     value={dataForm.phone}
                     onChange={handleChange}
                 /><br/>
-                <input 
+                <input className='inputCart'
                     type='email' 
                     name='email'
                     placeholder='email' 
                     value={dataForm.email}
                     onChange={handleChange}
                 /><br/>
-                <button>Terminar compra</button>
-                
+                <br />
+                <button className='botonCart'>Terminar compra</button>
+                <br />
             </form>
-              <div>
-                {id.length !== '' && `el id de la compra es: ${id}`}
-              </div>
-
+            <br />
+            <div className='idcompra'>
+            {id.length !== '' && `El id de la compra es: ${id}`}
+            </div>
+            
     </div>
   )
 }

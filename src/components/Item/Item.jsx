@@ -9,14 +9,17 @@ function Item(prod) {
 return (
     <div> 
     <Card className='card'>
-<Card.Img variant="top" src={prod.imagen} />
+<Card.Img variant="top" className='imagenItem' src={prod.imagen} />
 <Card.Body>
-    <Card.Title>{prod.title}</Card.Title>
+    <Card.Title></Card.Title>
     <Card.Text>
-    {prod.producto}-{prod.talle}
+    <h2>{prod.producto}</h2>
+    </Card.Text>
+    <Card.Text>
+        {prod.precio}$
     </Card.Text>
     <Link to={`/detalle/${prod.id}`}>
-    <Button variant="secondary">detalle del producto</Button>
+    <Button variant="dark">detalle del producto</Button>
     </Link>
 </Card.Body>
 </Card>

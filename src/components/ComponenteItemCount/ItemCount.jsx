@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import {Button}from 'react-bootstrap'
 
 const ItemCount=({init, stock, onAdd})=> {
 
@@ -28,10 +28,10 @@ const addCarrito=()=>{
     return (
     <div className='botones'>
         
-        <button onClick={decrease}>-</button><button onClick={increase}>+</button>
+        <Button onClick={decrease} variant="dark">-</Button> <Button onClick={increase} variant="dark">+</Button>
         <div>{count}</div>
         <br />
-        <button onClick={addCarrito}> Agregar al carrito</button>
+        <Button onClick={addCarrito} variant="warning" > Agregar al carrito</Button>
         
     </div>
     );
