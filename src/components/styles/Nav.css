@@ -98,6 +98,12 @@ align-items: center;
     align-items: center;
 }
 
+.sectionCart{
+display: flex;
+justify-content:center;
+padding: 20px;
+}
+
 
 .preciototal{
     margin-left: 20px;

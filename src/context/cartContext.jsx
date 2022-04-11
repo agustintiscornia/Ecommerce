@@ -46,7 +46,6 @@ function CartContextProvider({ children }) {
 
     const VaciarCart = () => {
     setCartList([]);
-    alert("no hay productos en el carrito")
     };
 
     return (

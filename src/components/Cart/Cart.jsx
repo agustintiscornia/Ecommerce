@@ -1,8 +1,7 @@
 import { addDoc,collection, getFirestore} from 'firebase/firestore'
 import { useState } from 'react'
 import { Button } from 'react-bootstrap'
-import { Card } from 'react-bootstrap'
-import { ListGroup } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import { useCartContext} from '../../context/cartContext'
 
 function Cart() {
@@ -53,63 +52,78 @@ const handleChange = (e) => {
 })
 }
 
-
 console.log(dataForm)
 
+if (cartList.length === 0) {
   return (
-    <div>
-      <Button onClick={VaciarCart} variant='warning' className='vaciarcarrito'>vaciar carrito</Button>
-      <h1 className='carritotitulo'>Carrito</h1>
-
-      {cartList.map(prod=> 
-      <div className='containerCart'> 
-      <div><img className='cartImagen' src={prod.imagen} alt="" /></div>
-      <div> {prod.producto}</div>
-      <div>{prod.cant}</div>
-      <div>{prod.precio}$</div> 
-    <Button onClick={()=> removeItem(prod.id)} variant='warning'> X </Button>
-    
-</div>)}
-<br /><br />
-    <div className='preciototal'> Precio Total: {precioTotal()}$</div> 
-<br />
-      {/* form */}
-      
-      <form className='formCart'
-                onSubmit={generarOrden}                 
-            >
-                <input className='inputCart'
-                    type='text' 
-                    name='name' 
-                    placeholder='name' 
-                    value={dataForm.name}
-                    onChange={handleChange}
-                /><br />
-                <input className='inputCart'
-                    type='text' 
-                    name='phone'
-                    placeholder='tel' 
-                    value={dataForm.phone}
-                    onChange={handleChange}
-                /><br/>
-                <input className='inputCart'
-                    type='email' 
-                    name='email'
-                    placeholder='email' 
-                    value={dataForm.email}
-                    onChange={handleChange}
-                /><br/>
-                <br />
-                <button className='botonCart'>Terminar compra</button>
-                <br />
-            </form>
-            <br />
-            <div className='idcompra'>
-            {id.length !== '' && `El id de la compra es: ${id}`}
-            </div>
-            
+    <section>
+      <div className='sectionCart'>
+    <h2>Carrito vacio</h2>
     </div>
+    <div  className='sectionCart'>
+    <NavLink to='/'>
+      <Button variant='warning'>Volver al menu de inicio</Button>
+    </NavLink>
+    </div>
+    </section>
   )
+  }else{
+  
+    return (
+      <div>
+        <Button onClick={VaciarCart} variant='warning' className='vaciarcarrito'>vaciar carrito</Button>
+        <h1 className='carritotitulo'>Carrito</h1>
+  
+        {cartList.map(prod=> 
+        <div className='containerCart'> 
+        <div><img className='cartImagen' src={prod.imagen} alt="" /></div>
+        <div> {prod.producto}</div>
+        <div>{prod.cant}</div>
+        <div>{prod.precio}$</div> 
+      <Button onClick={()=> removeItem(prod.id)} variant='warning'> X </Button>
+      
+  </div>)}
+  <br /><br />
+      <div className='preciototal'> Precio Total: {precioTotal()}$</div> 
+  <br />
+        {/* form */}
+        
+        <form className='formCart'
+                  onSubmit={generarOrden}                 
+              >
+                  <input className='inputCart'
+                      type='text' 
+                      name='name' 
+                      placeholder='name' 
+                      value={dataForm.name}
+                      onChange={handleChange}
+                  /><br />
+                  <input className='inputCart'
+                      type='text' 
+                      name='phone'
+                      placeholder='tel' 
+                      value={dataForm.phone}
+                      onChange={handleChange}
+                  /><br/>
+                  <input className='inputCart'
+                      type='email' 
+                      name='email'
+                      placeholder='email' 
+                      value={dataForm.email}
+                      onChange={handleChange}
+                  /><br/>
+                  <br />
+                  <button className='botonCart'>Terminar compra</button>
+                  <br />
+              </form>
+              <br />
+              <div className='idcompra'>
+              {id.length !== '' && `El id de la compra es: ${id}`}
+              </div>
+              
+      </div>
+    )
+  }
 }
 
 export default Cart

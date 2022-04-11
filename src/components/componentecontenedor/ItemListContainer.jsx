@@ -35,8 +35,7 @@ export function ItemListContainer() {
 
   return(
   <>
-   {/*  <ItemList productos={productos}/> */}
-
+  
     {loading ? <p>cargando</p> 
     :
     <ItemList productos={productos}/> 
