@@ -57,7 +57,9 @@ margin: 40px;
     width: 700px;
 }
 
-
+p{
+    font-size: 20px;
+}
 /* Cart */
 
 h1{

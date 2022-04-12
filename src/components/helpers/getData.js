@@ -1,10 +1,10 @@
     const array = [
-    { id: '1',producto: 'Macbook pro', descripcion: " MacBook Pro 16 M1 Pro 512 GB - Plateado", imagen:"https://www.apple.com/v/macbook-pro-14-and-16/b/images/meta/macbook-pro-14-and-16_overview__fz0lron5xyuu_og.png", precio: 160000, }, 
-    { id: '2', producto: 'Huawei P30',descripcion: "Huawei P30 Pro Dual Sim 256 Gb 8 Gb Ram Sellado", imagen:"https://static-geektopia.com/storage/t/i/644/64460/800_800_1551952340238.webp", precio: 150000},
-    { id: '3', producto: 'OnePlus', descripcion: "OnePlus Nord 2 5G - 128GB -", imagen:"https://http2.mlstatic.com/D_NQ_NP_778647-MLA48143863371_112021-V.jpg",talle: 'talle:L', precio: 10000 },
-    { id: '4', producto: 'Samsung Tablet', descripcion: "Galaxy Tab A8 10.5” Wi-Fi", imagen:"https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/csm_Samsung_Galaxy_Tab_S7_Plus_Lite_1_dd680cd850.jpg", precio: 130000 },
-    {id:  '5', producto: 'Acer Laptop', descripcion: "Notebook Acer Aspire 5 Intel I7 8gb Ram 512ssd Windows 11", imagen:"https://m.media-amazon.com/images/I/71+2H96GHZL._AC_SX450_.jpg", precio: 10000 },
-    {id:  '6', producto: 'Iphone 13', descripcion: "Iphone 13 de ultima generacion con 128g", imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhPuI11rSrZ86L75zERVPsWSaEHBfFX3kbIQ&usqp=CAU", precio: 120000 },
+    { id: '1',product: 'Macbook pro', description: " MacBook Pro 16 M1 Pro 512 GB - Plateado", image:"https://www.apple.com/v/macbook-pro-14-and-16/b/images/meta/macbook-pro-14-and-16_overview__fz0lron5xyuu_og.png", price: 160000, }, 
+    { id: '2', product: 'Huawei P30',description: "Huawei P30 Pro Dual Sim 256 Gb 8 Gb Ram Sellado", image:"https://static-geektopia.com/storage/t/i/644/64460/800_800_1551952340238.webp", price: 150000},
+    { id: '3', product: 'OnePlus', description: "OnePlus Nord 2 5G - 128GB -", image:"https://http2.mlstatic.com/D_NQ_NP_778647-MLA48143863371_112021-V.jpg", price: 10000 },
+    { id: '4', product: 'Samsung Tablet', description: "Galaxy Tab A8 10.5” Wi-Fi", image:"https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/csm_Samsung_Galaxy_Tab_S7_Plus_Lite_1_dd680cd850.jpg", price: 130000 },
+    {id:  '5', product: 'Acer Laptop', description: "Notebook Acer Aspire 5 Intel I7 8gb Ram 512ssd Windows 11", image:"https://static.acer.com/up/Resource/Acer/Laptops/Porsche_Design_Acer_Book_RS/Images/20201012/Porsche-Design-Acer-Book-RS_AP714-51_modelmain.png", price: 10000 },
+    {id:  '6', product: 'Iphone 13', descripcion: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1644969385433", price: 120000 },
     ];
 
     const getData = new Promise((resolve, reject) => {

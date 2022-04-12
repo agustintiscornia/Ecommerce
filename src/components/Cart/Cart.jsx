@@ -14,31 +14,29 @@ function Cart() {
     const [id,setId]=useState('')
 
 
-    const{cartList,VaciarCart,removeItem,precioTotal}= useCartContext()
-console.log(cartList)
+    const{cartList,clearCart,removeItem,totalPrice}= useCartContext()
 
-const generarOrden=async(e)=>{
+const makeOrder=async(e)=>{
   e.preventDefault();
-  let orden = {}
+  let order = {}
 
-  orden.buyer = dataForm
-  orden.total= precioTotal();
+  order.buyer = dataForm
+  order.total= totalPrice();
 
-  orden.items = cartList.map(cartItem =>{
+  order.items = cartList.map(cartItem =>{
 
     const id = cartItem.id;
-    const producto  = cartItem.producto ;
-    const precio  = cartItem.precio * cartItem.cantidad ;
+    const product  = cartItem.product ;
+    const price  = cartItem.price * cartItem.count ;
 
-    return {id,producto,precio}
+    return {id,product,price}
 
   })
   
-  console.log(orden)
 
   const db = getFirestore()
       const queryCollectionSet = collection(db, 'orders')
-      addDoc(queryCollectionSet, orden)
+      addDoc(queryCollectionSet, order)
       .then(resp=>setId(resp.id))
       .catch(err => console.error(err))
       .finally(() => console.log('termino '))
@@ -52,44 +50,44 @@ const handleChange = (e) => {
 })
 }
 
-console.log(dataForm)
 
-if (cartList.length === 0) {
-  return (
-    <section>
-      <div className='sectionCart'>
-    <h2>Carrito vacio</h2>
-    </div>
-    <div  className='sectionCart'>
-    <NavLink to='/'>
-      <Button variant='warning'>Volver al menu de inicio</Button>
-    </NavLink>
-    </div>
-    </section>
-  )
+
+  if (cartList.length === 0) {
+    return (
+      <section>
+        <div className='sectionCart'>
+          <h2>Carrito vacio</h2>
+        </div>
+        <div  className='sectionCart'>
+          <NavLink to='/'>
+          <Button variant='warning'>Volver al menu de inicio</Button>
+          </NavLink>
+        </div>
+      </section>
+          )
   }else{
   
     return (
       <div>
-        <Button onClick={VaciarCart} variant='warning' className='vaciarcarrito'>vaciar carrito</Button>
+        <Button onClick={clearCart} variant='warning' className='vaciarcarrito'>vaciar carrito</Button>
         <h1 className='carritotitulo'>Carrito</h1>
   
         {cartList.map(prod=> 
         <div className='containerCart'> 
-        <div><img className='cartImagen' src={prod.imagen} alt="" /></div>
-        <div> {prod.producto}</div>
-        <div>{prod.cant}</div>
-        <div>{prod.precio}$</div> 
+        <div><img className='cartImagen' src={prod.image} alt="" /></div>
+        <div> {prod.product}</div>
+        <div>{prod.quantity}</div>
+        <div>{prod.price}$</div> 
       <Button onClick={()=> removeItem(prod.id)} variant='warning'> X </Button>
       
-  </div>)}
+      </div>)}
   <br /><br />
-      <div className='preciototal'> Precio Total: {precioTotal()}$</div> 
+      <div className='totalPrice'> Precio Total: {totalPrice()}$</div> 
   <br />
         {/* form */}
         
         <form className='formCart'
-                  onSubmit={generarOrden}                 
+                  onSubmit={makeOrder}                 
               >
                   <input className='inputCart'
                       type='text' 

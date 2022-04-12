@@ -8,7 +8,7 @@ import { useCartContext } from '../context/cartContext'
 import './styles/Nav.css'
 function AppNavbar() {
 
-const {cantidadTotalItem}=useCartContext()
+const {totalItem}=useCartContext()
 
 return (
     <div>
@@ -19,14 +19,14 @@ return (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto" >
         <NavLink  className='menu' to="/">Home</NavLink>
-        <NavLink  className='menu' to="/categoria/Macbook pro">Computadoras</NavLink>
-        <NavLink  className='menu' to="/categoria/Huawei P30">Celulares</NavLink>
-        <NavLink className='menu' to='/categoria/Samsung Tablet'>Tablet</NavLink>
+        <NavLink  className='menu' to="/category/Macbook pro">Computadoras</NavLink>
+        <NavLink  className='menu' to="/category/Huawei P30">Celulares</NavLink>
+        <NavLink className='menu' to='/category/Samsung Tablet'>Tablet</NavLink>
       </Nav>
     </Navbar.Collapse>
   </Container>
   <NavLink className='numero2' to="cart">
-    <div className='numero'>{cantidadTotalItem()}</div>
+    <div className='numero'>{totalItem()}</div>
   <CartWidget/>
   </NavLink>
 </Navbar>

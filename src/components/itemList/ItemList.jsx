@@ -2,11 +2,11 @@ import React from 'react'
 import Item from '../Item/Item'
 
 
-function ItemList({productos}) {
+function ItemList({products}) {
 return (
 < div className='containerItemList'>
 {
-    productos.map((prod)=><Item key={prod.id} id={prod.id} imagen={prod.imagen} producto={prod.producto} precio={prod.precio}/>)
+    products.map((prod)=><Item key={prod.id} id={prod.id} image={prod.image} product={prod.product} price={prod.price}/>)
 }
 </div>
 )}
