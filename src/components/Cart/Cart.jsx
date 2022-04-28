@@ -32,7 +32,7 @@ const makeOrder=async(e)=>{
     return {id,product,price}
 
   })
-  
+  console.log(order)
 
   const db = getFirestore()
       const queryCollectionSet = collection(db, 'orders')

@@ -19,7 +19,7 @@ return (
         {prod.price}$
     </Card.Text>
     <Link to={`/detail/${prod.id}`}>
-    <Button variant="dark">detail del producto</Button>
+    <Button variant="dark">detalle del producto</Button>
     </Link>
 </Card.Body>
 </Card>
